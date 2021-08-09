@@ -42,7 +42,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Worker>(_workerDal.Get(w=>w.WorkerId==id));
         }
 
-        //[SecuredOperation("worker.admin,admin")]
+        [SecuredOperation("worker.admin,admin")]
         [ValidationAspect(typeof(WorkerValidator))]
         [CacheRemoveAspect("IWorkerService.Get")]
         public IResult Add(Worker worker)

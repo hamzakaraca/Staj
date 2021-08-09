@@ -33,7 +33,7 @@ namespace Business.Concrete
             _workDal = workDal;
         }
 
-        //[SecuredOperation("work.admin,admin")]
+        [SecuredOperation("work.admin,admin")]
         [ValidationAspect(typeof(WorkValidator))]
         [CacheRemoveAspect("IWorkService.Get")]
         public IResult Add(Work work)

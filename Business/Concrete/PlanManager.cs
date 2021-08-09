@@ -26,7 +26,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(PlanValidator))]
         [CacheRemoveAspect("IPlanService.Get")]
-        //[SecuredOperation("plan.admin,admin")]
+        [SecuredOperation("plan.admin,admin")]
         public IResult Add(Plan plan)
         {
             _planDal.Add(plan);
